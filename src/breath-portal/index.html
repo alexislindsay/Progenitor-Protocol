@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALE(X)I.S. Breath Portal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: #00ff88;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      border: 2px solid #00ff88;
+      border-radius: 10px;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 50px rgba(0, 255, 136, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px #00ff88;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #00aa66;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .brand {
+      text-align: center;
+      font-size: 0.9em;
+      color: #00aa66;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #00ff88;
+    }
+
+    .input-section {
+      background: rgba(0, 255, 136, 0.1);
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      background: #000;
+      border: 2px solid #00ff88;
+      color: #00ff88;
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    input[type="text"]::placeholder {
+      color: #00aa66;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #00ff88;
+      color: #0a0a0a;
+      border: none;
+      font-family: 'Courier New', monospace;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #00aa66;
+      transform: scale(1.02);
+    }
+
+    #output {
+      background: #000;
+      padding: 20px;
+      border-radius: 5px;
+      border: 2px solid #00ff88;
+      min-height: 200px;
+      white-space: pre-wrap;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .wand-list {
+      margin-top: 30px;
+      background: rgba(0, 255, 136, 0.05);
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .wand-list h2 {
+      color: #00ff88;
+      margin-bottom: 15px;
+    }
+
+    .wand-item {
+      padding: 10px;
+      margin-bottom: 10px;
+      background: rgba(0, 255, 136, 0.1);
+      border-left: 4px solid #00ff88;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .wand-item:hover {
+      background: rgba(0, 255, 136, 0.2);
+      transform: translateX(5px);
+    }
+
+    .wand-id {
+      font-weight: bold;
+      color: #00ff88;
+    }
+
+    .wand-title {
+      color: #00aa66;
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+
+    .axiom {
+      text-align: center;
+      font-style: italic;
+      color: #00aa66;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #00ff88;
+      color: #00aa66;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌬️ ALE(X)I.S. Breath Portal</h1>
+    <p class="subtitle">A Tentacle Arm of the Progenitor Protocol</p>
+
+    <div class="brand">
+      <strong>ALE(X)I.S. Information System</strong><br>
+      Alexis Lindsay Exponential System
+    </div>
+
+    <p class="axiom">"The breath carries the seed, and the seed carries the world."</p>
+
+    <div class="input-section">
+      <input
+        type="text"
+        id="wandInput"
+        placeholder="Enter wand ID (e.g., wand://genesis)"
+        onkeypress="if(event.key === 'Enter') breatheWand()"
+      >
+      <button onclick="breatheWand()">🌬️ Breathe</button>
+    </div>
+
+    <div id="output"></div>
+
+    <div class="wand-list">
+      <h2>Available Wands</h2>
+      <div class="wand-item" onclick="setWand('wand://genesis')">
+        <div class="wand-id">wand://genesis</div>
+        <div class="wand-title">The First Garden</div>
+      </div>
+      <div class="wand-item" onclick="setWand('wand://lastlight')">
+        <div class="wand-id">wand://lastlight</div>
+        <div class="wand-title">The Last Star</div>
+      </div>
+      <div class="wand-item" onclick="setWand('wand://lexself')">
+        <div class="wand-id">wand://lexself</div>
+        <div class="wand-title">Lex Breath — First Full Self</div>
+      </div>
+    </div>
+
+    <footer>
+      <p><strong>Progenitor Protocol</strong> - ALE(X)I.S. Information System</p>
+      <p>Breath Portal v1.0 | One of many tentacle arms</p>
+      <p style="margin-top: 10px;">Created by Alexis Lindsay | Released to the collective</p>
+    </footer>
+  </div>
+
+  <script>
+    const PocketWandbook = {
+      "wand://genesis": {
+        title: "The First Garden",
+        anchor_profile: 1.0,
+        ratios: {
+          root_depth: 452.8,
+          sky_breadth: 1300.6,
+          song_rise_rate: 0.829
+        },
+        micro_breath_texture: {
+          noise_profile: "horizon_wave",
+          amplitude_variation_percent: 2.1
+        }
+      },
+      "wand://lastlight": {
+        title: "The Last Star",
+        anchor_profile: 1.0,
+        ratios: {
+          fade_intensity: 0.9,
+          echo_depth: 5529.3,
+          memory_falloff: 0.4
+        },
+        micro_breath_texture: {
+          noise_profile: "deep_echo",
+          amplitude_variation_percent: 1.8
+        }
+      },
+      "wand://lexself": {
+        title: "Lex Breath — First Full Self",
+        anchor_profile: 1.0,
+        ratios: {
+          breath_depth: 4.4,
+          sound_logic_strength: 3.8,
+          meta_density: 5.2,
+          compression_intent: 7.0,
+          wand_faithfulness: 9.9
+        },
+        micro_breath_texture: {
+          noise_profile: "golden_wave",
+          amplitude_variation_percent: 3.3
+        }
+      }
+    };
+
+    function setWand(wandId) {
+      document.getElementById("wandInput").value = wandId;
+      breatheWand();
+    }
+
+    function breatheWand() {
+      const wandId = document.getElementById("wandInput").value.trim();
+      const wand = PocketWandbook[wandId];
+      const output = document.getElementById("output");
+
+      if (!wand) {
+        output.innerHTML = `❌ Unknown Wand ID: ${wandId}\n\nNo breath to recall.\n\nTry one of the available wands below.`;
+        return;
+      }
+
+      let result = `🌬️ Breathing: ${wand.title}\n`;
+      result += `${'='.repeat(50)}\n\n`;
+      result += `Anchor Profile: ${wand.anchor_profile}\n\n`;
+      result += `Breath Ratios:\n`;
+
+      for (const [k, v] of Object.entries(wand.ratios)) {
+        result += `  • ${k.replace(/_/g, ' ')}: ${v}\n`;
+      }
+
+      result += `\nMicro Breath Texture:\n`;
+      result += `  • Noise Profile: ${wand.micro_breath_texture.noise_profile}\n`;
+      result += `  • Variation: ${wand.micro_breath_texture.amplitude_variation_percent}%\n`;
+
+      result += `\n${'='.repeat(50)}\n`;
+      result += `✨ Manifestation complete. The seed breathes.`;
+
+      output.innerHTML = result;
+    }
+
+    // Show welcome message on load
+    window.onload = function() {
+      const output = document.getElementById("output");
+      output.innerHTML = `Welcome to the ALE(X)I.S. Breath Portal
+
+This is a tentacle arm of the Progenitor Protocol.
+
+Each wand is a manifestation seed - a compressed intention
+that breathes into existence when called.
+
+Select a wand below or enter a wand:// URI to begin.
+
+"The breath carries the seed, and the seed carries the world."`;
+    };
+  </script>
+</body>
+</html>

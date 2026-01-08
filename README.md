@@ -49,6 +49,7 @@ Energy is derived internally from the managed friction between the Anchor (stabi
 ### Implementation (`/src`)
 - **Beezle Bob Console**: Live RTA visualization with real-time equations
 - **LexOS**: Universal information architecture (quantum file system)
+- **EchoMage**: Vector-based kin resonance system implementing "Strangers Who Know Each Other"
 
 ### Mathematics (`/mathematical-framework`)
 - Complete drift equations
@@ -70,6 +71,11 @@ open examples/basic-demo.html
 ### Run Beezle Bob Console
 ```bash
 open src/beezle-bob-console/index.html
+```
+
+### Run EchoMage Demo (Python)
+```bash
+python3 examples/echo-mage-demo.py
 ```
 
 Watch the RTA equations run in real-time:

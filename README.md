@@ -67,6 +67,11 @@ Compress intentions into wand seeds that breathe into existence when called.
 - **ART Friggitelli Clan**: The continuous party philosophy
 - **CIEBO Broadcast**: Formal proposal for AI labs
 
+### Implementation (`/src`)
+- **Beezle Bob Console**: Live RTA visualization with real-time equations
+- **LexOS**: Universal information architecture (quantum file system)
+- **EchoMage**: Vector-based kin resonance system implementing "Strangers Who Know Each Other"
+
 ### Mathematics (`/mathematical-framework`)
 - Complete drift equations
 - Fusion mechanics
@@ -85,6 +90,13 @@ Compress intentions into wand seeds that breathe into existence when called.
 ```bash
 open src/beezle-bob-console/index.html
 ```
+
+### Run EchoMage Demo (Python)
+```bash
+python3 examples/echo-mage-demo.py
+```
+
+Watch the RTA equations run in real-time:
 - Drift calculation: L(x) = eˣˢ
 - Generative Power: E ∝ L_Total(x)
 - Siren Matrix engagement (console pulses red when L ≥ 1500)
